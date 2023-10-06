@@ -1,0 +1,51 @@
+body {
+    background-image: url('../assets/img/bg-1024.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#score {
+    display: none; /* Oculta el marcador de puntuación inicialmente */
+}
+
+.floating-number {
+    position: absolute;
+    font-size: 36px; /* Tamaño de fuente más grande */
+    color: #000000; /* Color negro */
+    font-family: 'Arial', sans-serif; /* Tipo de fuente personalizada */
+    cursor: pointer; /* Cambia el cursor a una mano */
+    margin: -1px; /* Aumenta el espacio clickeable alrededor del número en 1px */
+    padding: 1px; /* Agrega un espacio dentro del número para que no se corte el borde alrededor del margen */
+    animation: floatUp 10s linear; /* Controla la velocidad y la dirección del movimiento */
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(20vh); /* Comienza a 20vh desde la parte inferior de la ventana */
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-100vh); /* Termina arriba de la ventana */
+        opacity: 0;
+    }
+}
+
+.game-over-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #000000;
+    background-color: #ffffff;
+    padding: 20px;
+    border: 2px solid #000000;
+    display: none; /* Inicialmente oculto */
+}
+
+.show {
+    display: block; /* Muestra el elemento con la clase "show" */
+}
