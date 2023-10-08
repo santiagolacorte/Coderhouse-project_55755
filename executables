@@ -1,0 +1,36 @@
+#!/bin/bash -e
+
+sass_path='src/static/sass'
+sass_file='src/static/sass/styles.scss'
+variables_file="$sass_path/_variables.scss"
+resets_file="$sass_path/_resets.scss"
+
+if [ ! -e "$variables_file" ]; then
+    echo "variables.scss doesn't exist. Creating file..."
+    echo "" > "$variables_file"
+fi
+
+if [ ! -e "$resets_file" ]; then
+    echo "resets.scss doesn't exist. Creating file..."
+    echo "" > "$resets_file"
+fi
+
+if [ -e "$sass_file" ]; then
+    echo "styles.scss exists. Updating styles.scss..."
+    > "$sass_file"  # Cleaning again the file
+else
+    echo "Styles.scss doesn't exist. Creating file..."
+    touch "$sass_file"
+fi
+
+echo "@import 'variables.scss';" >> "$sass_file"
+echo "@import 'resets.scss';" >> "$sass_file"
+
+for my_file in $(ls -1 "$sass_path"/*.scss | grep -vE "_variables.scss|_resets.scss|styles.scss"); do
+    file_name=$(basename "$my_file")
+    file_wo_underscore="${file_name#_}"
+    echo "@import '$file_wo_underscore';" >> "$sass_file"
+done
+
+echo "styles.scss updated. Watching for changes..."
+sass --watch src/static/sass:src/static/css
