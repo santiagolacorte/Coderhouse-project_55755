@@ -49,6 +49,6 @@ class Element {
                 this.clicked = true;
                 this.element.remove();
             }
-        }, 7000);
+        }, 6000);
     };
 };

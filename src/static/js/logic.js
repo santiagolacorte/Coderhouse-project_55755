@@ -26,7 +26,7 @@ class Game {
         this.number_interval = setInterval(() => {
             if ( !this.game_over ) {
                 let new_number = new Element();
-                document.body.appendChild(new_number.element);
+                document.getElementById('number-container').appendChild(new_number.element);
             }
         }, 1000);
     };
