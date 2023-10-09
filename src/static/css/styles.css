@@ -1,53 +1,116 @@
-@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Creepster&family=Poppins:wght@100;300;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-image: url("../assets/img/bg-1024.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 0;
-  height: 100vh;
+  background: linear-gradient(#03264C, #2F4C78);
+  min-height: 100vh;
   overflow: hidden;
 }
 
-#score {
-  display: none; /* Oculta el marcador de puntuación inicialmente */
+.header {
+  top: 0;
+  left: 0;
+  font-family: "Poppins", sans-serif;
 }
-
-.floating-number {
-  position: absolute;
-  font-size: 36px; /* Tamaño de fuente más grande */
-  color: #000000; /* Color negro */
-  font-family: "Arial", sans-serif; /* Tipo de fuente personalizada */
-  cursor: pointer; /* Cambia el cursor a una mano */
-  margin: -1px; /* Aumenta el espacio clickeable alrededor del número en 1px */
-  padding: 1px; /* Agrega un espacio dentro del número para que no se corte el borde alrededor del margen */
-  animation: floatUp 10s linear; /* Controla la velocidad y la dirección del movimiento */
+.header .header__container .header__container__navbar .logo {
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  z-index: 10;
+}
+.header .header__container .header__container__navbar ul {
+  z-index: 10;
+}
+.header .header__container .header__container__navbar ul li {
+  list-style: none;
+}
+.header .header__container .header__container__navbar ul li a {
+  text-decoration: none;
+  color: white;
+  border-radius: 20px;
+}
+.header .header__container .header__container__navbar ul li a:hover, .header .header__container .header__container__navbar ul li a.active {
+  background: white;
+  color: #03264C;
 }
 
 @keyframes floatUp {
   from {
-    transform: translateY(20vh); /* Comienza a 20vh desde la parte inferior de la ventana */
+    transform: translateY(20vh);
     opacity: 1;
   }
   to {
-    transform: translateY(-100vh); /* Termina arriba de la ventana */
+    transform: translateY(-100vh);
     opacity: 0;
   }
 }
-.game-over-message {
+.main .floating-number {
+  font-family: "Creepster";
+  font-size: 6.5rem;
+  color: #09FF00;
+  text-shadow: 0 0 40px #09FF00;
+  position: absolute;
+  margin: -25px;
+  padding: 25px;
+  cursor: pointer;
+  animation: floatUp 10s linear;
+  z-index: 10;
+}
+.main .game-over-message {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 24px;
+  font-size: 2rem;
   color: #000000;
   background-color: #ffffff;
   padding: 20px;
   border: 2px solid #000000;
-  display: none; /* Inicialmente oculto */
+  display: none;
+  z-index: 10;
 }
-
-.show {
-  display: block; /* Muestra el elemento con la clase "show" */
+.main .show {
+  display: block;
+}
+.main section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 100px;
+}
+.main section img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.main section img#stars {
+  z-index: 1;
+}
+.main section img#moon {
+  mix-blend-mode: screen;
+  z-index: 2;
+}
+.main section img#background {
+  z-index: 3;
+}
+.main section img#bats, .main section img#house {
+  z-index: 4;
+}
+.main section img#front-trees {
+  z-index: 5;
+}
+.main section img#flies {
+  z-index: 6;
 }
 
 /*# sourceMappingURL=styles.css.map */

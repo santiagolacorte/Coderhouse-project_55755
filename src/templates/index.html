@@ -8,9 +8,45 @@
         <title>Números Flotantes</title>
     </head>
     <body>
-        <main>
-            <div id="game-over" class="game-over-message"></div>
+        <header class="header">
+            <div class="header__container container-fluid position-absolute px-5">
+                <div class="row px-5">
+                    <div class="header__container__navbar d-flex justify-content-between align-items-center py-5">
+                        <a href="#" class="logo">Logo</a>
+                        <ul class="d-flex justify-content-center align-items-center my-0 px-0">
+                            <li class="mx-lg-2">
+                                <a class="text-center px-2 py-2" href="#">Pre-entrega 1</a>
+                            </li>
+                            <li class="mx-lg-2">
+                                <a class="text-center px-2 py-2" href="#">Pre-entrega 2</a>
+                            </li>
+                            <li class="mx-lg-2">
+                                <a class="text-center px-2 py-2 active" href="#">Pre-entrega 3</a>
+                            </li>
+                            <li class="mx-lg-2">
+                                <a class="text-center px-2 py-2" href="#">Entrega final</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <section>
+                <img src="{{ url_for('static', filename='assets/img/bats.png') }}" alt="" id="bats">
+                <img src="{{ url_for('static', filename='assets/img/background.png') }}" alt="" id="background">
+                <img src="{{ url_for('static', filename='assets/img/flies.png') }}" alt="" id="flies">
+                <img src="{{ url_for('static', filename='assets/img/front-trees.png') }}" alt="" id="front-trees">
+                <img src="{{ url_for('static', filename='assets/img/house.png') }}" alt="" id="house">
+                <img src="{{ url_for('static', filename='assets/img/moon.png') }}" alt="" id="moon">
+                <img src="{{ url_for('static', filename='assets/img/stars.png') }}" alt="" id="stars">
+                <div id="number-container"></div>
+                <div class="game-over-message" id="game-over"></div>
+            </section>
         </main>
+        <footer class="footer">
+
+        </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
         <script src="{{ url_for('static', filename='js/element.js') }}"></script>
         <script src="{{ url_for('static', filename='js/logic.js') }}"></script>
