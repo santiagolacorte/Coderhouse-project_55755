@@ -87,21 +87,23 @@ body {
 }
 .main section .main__button {
   display: inline-block;
+  font-family: "Creepster";
   text-decoration: none;
+  color: white;
+  text-shadow: 0 0 40px white;
+  font-size: 3rem;
+  z-index: 4;
+  transform: translateY(-15vh);
+  background: #000000;
   border-radius: 40px;
-  background: white;
-  color: #03264C;
-  font-size: 1.5rem;
-  z-index: 6;
-  transition: all 12s ease;
 }
 .main section h1 {
   font-family: "Creepster";
-  font-size: 7.5vw;
+  font-size: 7vw;
   color: #09FF00;
   text-shadow: 0 0 40px #09FF00;
-  z-index: 4;
-  transform: translateX(32.5vw);
+  z-index: 10;
+  transform: translateY(10vh);
 }
 .main section img {
   position: absolute;
@@ -147,6 +149,12 @@ body {
   background: #03264C;
   height: 100vh;
   overflow-y: hidden;
+}
+
+@media (max-width: 768px) {
+  .main section h1 {
+    font-size: 12.5vw;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
