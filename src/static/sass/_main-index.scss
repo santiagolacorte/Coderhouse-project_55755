@@ -14,8 +14,8 @@
     .floating-number {
         font-family: 'Creepster'; 
         font-size: 6.5rem;
-        color: #09FF00;
-        text-shadow: 0 0 40px #09FF00;
+        color: map-get($map: $colors, $key: green-spooky);
+        text-shadow: 0 0 40px map-get($map: $colors, $key: green-spooky);
         position: absolute;
         margin: -25px; 
         padding: 25px; 
@@ -48,13 +48,34 @@
         height: 100vh;
         padding: 100px;
 
+        .main__button {
+            display: inline-block;
+            text-decoration: none;
+            border-radius: 40px;
+            background: white;
+            color: map-get($map: $colors, $key: blue-dark);
+            font-size: 1.5rem;
+            z-index: 6;
+            transition: all 12s ease;
+        }
+
+        h1 {
+            font-family: 'Creepster';
+            font-size: 7.5vw;
+            color: map-get($map: $colors, $key: green-spooky);
+            text-shadow: 0 0 40px map-get($map: $colors, $key: green-spooky);
+            z-index: 4;
+            transform: translateX(32.5vw);
+        }
+
         img {
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            pointer-events: none;
         }
 
         img#stars {
@@ -66,20 +87,40 @@
             z-index: 2;
         }
 
-        img#background {
+        img#house {
             z-index: 3;
         }
 
-        img#bats, img#house {
-            z-index: 4;
-        }
-
-        img#front-trees {
+        img#secondary-background {
             z-index: 5;
         }
 
-        img#flies {
-            z-index: 6;
+        img#main-background {
+            z-index: 7;
         }
+
+        img#left-ghost, img#right-ghost {
+            z-index: 8;
+        }
+
+        img#tombs {
+            z-index: 9;
+        }
+    }
+
+    section::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 15vh;
+        background: linear-gradient(to top, #03264C, transparent);
+        z-index: 10;
+    }
+
+    .game_screen {
+        background: map-get($map: $colors, $key: blue-dark);
+        height: 100vh;
+        overflow-y: hidden;
     }
 }
