@@ -36,13 +36,14 @@
                 <img src="{{ url_for('static', filename='assets/img/stars.png') }}" alt="" id="stars">
                 <img src="{{ url_for('static', filename='assets/img/moon.png') }}" alt="" id="moon">
                 <img src="{{ url_for('static', filename='assets/img/house.png') }}" alt="" id="house">
-                <h1 class="position-absolute" id="main-text">Spooky FizzBuzz</h1>
                 <img src="{{ url_for('static', filename='assets/img/secondary-background.png') }}" alt="" id="secondary-background">
                 <a class="main__button px-5 py-1" href="#game-screen" id="main-button">Play</a>
                 <img src="{{ url_for('static', filename='assets/img/main-background.png') }}" alt="" id="main-background">
                 <img src="{{ url_for('static', filename='assets/img/left-ghost.png') }}" alt="" id="left-ghost">
                 <img src="{{ url_for('static', filename='assets/img/right-ghost.png') }}" alt="" id="right-ghost">
                 <img src="{{ url_for('static', filename='assets/img/tombs.png') }}" alt="" id="tombs">
+                <h1 class="position-absolute" id="main-text">Spooky FizzBuzz</h1>
+                <p class="position-absolute">Press the numbers divisible by 3 or 5</p>
             </section>
             <div class="game_screen position-relative py-5 px-5" id="game-screen">
                 <div id="number-container"></div>
@@ -53,9 +54,9 @@
 
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-        <!-- <script src="{{ url_for('static', filename='js/element.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/element.js') }}"></script>
         <script src="{{ url_for('static', filename='js/logic.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/app.js') }}"></script> -->
+        <script src="{{ url_for('static', filename='js/app.js') }}"></script>
         <script src="{{ url_for('static', filename='js/parallax.js') }}"></script>
     </body>
 </html>

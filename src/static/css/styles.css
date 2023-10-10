@@ -51,6 +51,17 @@ body {
     opacity: 0;
   }
 }
+@keyframes bumpButton {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .main .floating-number {
   font-family: "Creepster";
   font-size: 6.5rem;
@@ -82,20 +93,20 @@ body {
 .main section {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 110vh;
   padding: 100px;
 }
 .main section .main__button {
-  display: inline-block;
   font-family: "Creepster";
   text-decoration: none;
   color: white;
   text-shadow: 0 0 40px white;
   font-size: 3rem;
   z-index: 4;
-  transform: translateY(-15vh);
+  margin-bottom: 32.5vh;
   background: #000000;
   border-radius: 40px;
+  animation: bumpButton 1.5s infinite;
 }
 .main section h1 {
   font-family: "Creepster";
@@ -103,7 +114,15 @@ body {
   color: #09FF00;
   text-shadow: 0 0 40px #09FF00;
   z-index: 10;
-  transform: translateY(10vh);
+  margin-top: 35vh;
+}
+.main section p {
+  font-family: "Creepster";
+  color: white;
+  text-shadow: 0 0 40px white;
+  font-size: 4vw;
+  z-index: 10;
+  margin-top: 55vh;
 }
 .main section img {
   position: absolute;
@@ -154,6 +173,14 @@ body {
 @media (max-width: 768px) {
   .main section h1 {
     font-size: 12.5vw;
+  }
+  .main section p {
+    font-size: 7vw;
+    justify-content: center;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 60vh;
   }
 }
 
