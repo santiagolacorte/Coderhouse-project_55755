@@ -9,5 +9,5 @@
 body {
     background: linear-gradient(map-get($map: $colors, $key: blue-dark), map-get($map: $colors, $key: blue-regular));
     min-height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
 }

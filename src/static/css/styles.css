@@ -8,7 +8,7 @@
 body {
   background: linear-gradient(#03264C, #2F4C78);
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .header {
@@ -51,6 +51,17 @@ body {
     opacity: 0;
   }
 }
+@keyframes bumpButton {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .main .floating-number {
   font-family: "Creepster";
   font-size: 6.5rem;
@@ -82,16 +93,45 @@ body {
 .main section {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 110vh;
   padding: 100px;
+}
+.main section .main__button {
+  font-family: "Creepster";
+  text-decoration: none;
+  color: white;
+  text-shadow: 0 0 40px white;
+  font-size: 3rem;
+  z-index: 4;
+  margin-bottom: 32.5vh;
+  background: #000000;
+  border-radius: 40px;
+  animation: bumpButton 1.5s infinite;
+}
+.main section h1 {
+  font-family: "Creepster";
+  font-size: 7vw;
+  color: #09FF00;
+  text-shadow: 0 0 40px #09FF00;
+  z-index: 10;
+  margin-top: 35vh;
+}
+.main section p {
+  font-family: "Creepster";
+  color: white;
+  text-shadow: 0 0 40px white;
+  font-size: 4vw;
+  z-index: 10;
+  margin-top: 55vh;
 }
 .main section img {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  pointer-events: none;
 }
 .main section img#stars {
   z-index: 1;
@@ -100,17 +140,48 @@ body {
   mix-blend-mode: screen;
   z-index: 2;
 }
-.main section img#background {
+.main section img#house {
   z-index: 3;
 }
-.main section img#bats, .main section img#house {
-  z-index: 4;
-}
-.main section img#front-trees {
+.main section img#secondary-background {
   z-index: 5;
 }
-.main section img#flies {
-  z-index: 6;
+.main section img#main-background {
+  z-index: 7;
+}
+.main section img#left-ghost, .main section img#right-ghost {
+  z-index: 8;
+}
+.main section img#tombs {
+  z-index: 9;
+}
+.main section::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 15vh;
+  background: linear-gradient(to top, #03264C, transparent);
+  z-index: 10;
+}
+.main .game_screen {
+  background: #03264C;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+@media (max-width: 768px) {
+  .main section h1 {
+    font-size: 12.5vw;
+  }
+  .main section p {
+    font-size: 7vw;
+    justify-content: center;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 60vh;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
