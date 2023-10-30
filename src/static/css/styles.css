@@ -74,27 +74,12 @@ body {
   animation: floatUp 10s linear;
   z-index: 10;
 }
-.main .game-over-message {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2rem;
-  color: #000000;
-  background-color: #ffffff;
-  padding: 20px;
-  border: 2px solid #000000;
-  display: none;
-  z-index: 10;
-}
-.main .show {
-  display: block;
-}
 .main section {
   position: relative;
   width: 100%;
   height: 110vh;
   padding: 100px;
+  overflow: hidden;
 }
 .main section .main__button {
   font-family: "Creepster";
@@ -168,6 +153,33 @@ body {
   background: #03264C;
   height: 100vh;
   overflow-y: hidden;
+}
+.main .game_screen .game-over-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: #000000;
+  background-color: #ffffff;
+  padding: 20px;
+  border: 2px solid #000000;
+  display: none;
+  z-index: 10;
+}
+.main .game_screen .leaderboard {
+  position: fixed;
+  top: 10%;
+  right: 10px;
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  padding: 10px;
+  color: #000000;
+  z-index: 20;
+  display: none;
+}
+.main .game_screen .show {
+  display: block;
 }
 
 @media (max-width: 768px) {

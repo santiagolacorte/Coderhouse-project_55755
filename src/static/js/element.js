@@ -4,11 +4,17 @@ class Element {
     constructor () {
         this.element = document.createElement('div');
         this.value = Math.floor(Math.random() * 100);
+        this.id = Element.generateUniqueId();
         this.clicked = false;
+        this.clicked_numbers = game.clicked_numbers;
         this.set_properties();
         this.set_position();
         this.check_click();
         this.disappear_number();
+    };
+
+    static generateUniqueId() {
+        return '_' + Math.random().toString(36).substr(2, 9);
     };
 
     set_properties() {
@@ -25,27 +31,28 @@ class Element {
 
     check_click() {
         this.element.addEventListener('click', () => {
-            if ( !this.clicked ) {
+            if (!this.clicked) {
                 this.clicked = true;
                 this.check_value(); // Updating the score
                 this.element.remove(); // Removing the element after being clicked
-            };
+                this.clickedNumbers[this.id] = true;
+            }
         });
     };
 
     check_value() {
-        if ( this.value % 3 == 0 && this.value % 5 == 0 ) {
+        if (this.value % 3 === 0 && this.value % 5 === 0) {
             game.update_score(3);
-        } else if ( this.value % 3 == 0 || this.value % 5 == 0 ) {
+        } else if (this.value % 3 === 0 || this.value % 5 === 0) {
             game.update_score(1);
         } else {
             game.update_score(-1);
-        };
+        }
     };
 
     disappear_number() {
         setTimeout(() => {
-            if ( !this.clicked ) {
+            if (!this.clicked) {
                 this.clicked = true;
                 this.element.remove();
             }

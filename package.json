@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "jquery": "^3.7.1",
+    "rellax": "^1.12.1"
+  }
+}

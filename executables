@@ -5,17 +5,17 @@ sass_file='src/static/sass/styles.scss'
 variables_file="$sass_path/_variables.scss"
 resets_file="$sass_path/_resets.scss"
 
-if [ ! -e "$variables_file" ]; then
+if [[ ! -e "$variables_file" ]]; then
     echo "variables.scss doesn't exist. Creating file..."
     echo "" > "$variables_file"
 fi
 
-if [ ! -e "$resets_file" ]; then
+if [[ ! -e "$resets_file" ]]; then
     echo "resets.scss doesn't exist. Creating file..."
     echo "" > "$resets_file"
 fi
 
-if [ -e "$sass_file" ]; then
+if [[ -e "$sass_file" ]]; then
     echo "styles.scss exists. Updating styles.scss..."
     > "$sass_file"  # Cleaning again the file
 else
